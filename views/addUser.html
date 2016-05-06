@@ -1,0 +1,65 @@
+<form role="form" name="docencia">
+<div class="form-group">
+           	<label class="item item-input">
+          		<span class="input-label">Cedula: </span>
+         		<input class="form-control" type="text" ng-model="user.userName" required>
+       		</label>
+       		<br>
+       		<label class="item item-input">
+          		<span class="input-label">Nombres: </span>
+         		<input class="form-control" type="text" ng-model="user.nombres" required>
+       		</label>
+       		<br>
+       		<label class="item item-input">
+          		<span class="input-label">Apellidos: </span>
+         		<input class="form-control" type="text" ng-model="user.apellidos" required>
+       		</label>
+       		<br>
+       		<label class="item item-input">
+          		<span class="input-label">Rol: </span>
+				<select class="form-control" class="form-control" name="singleSelect" ng-model="user.tipo" required>
+					<option value="M">Maestro</option>
+					<option value="DC">Decano</option>
+					<option value="CI">Coordinador de Investigación</option>
+					<option value="VX">Vicerrectoría Extención</option>
+					<option></option>
+				</select>
+       		</label>
+       		<br>
+       		<label class="item item-input">
+          		<span class="input-label">Area: </span>
+         		<input class="form-control" type="text" ng-model="user.area" required>
+       		</label>
+       		<br>
+       		<label class="item item-input">
+          		<span class="input-label">Dedicación: </span>
+				<select class="form-control" class="form-control" required name="singleSelect" ng-model="user.dedicacion">
+					<option value="TC">Tiempo Completo</option>
+					<option value="MT">Medio Tiempo</option>
+					<option value="O">Ocacional</option>
+				</select>
+       		</label>
+       		<br>
+       		<label class="item item-input">
+          		<span class="input-label">Firma: </span>
+         		<input class="form-control" type="file" ng-model="user.firma">
+       		</label>
+       		<br>
+       		<label class="item item-input">
+            	<span class="input-label">E-Mail:</span>
+				<input class="form-control" type="text" required ng-model="user.email">
+         	</label>
+         	<br>
+         	<label class="item item-input">
+          		<span class="input-label">Contraseña:</span>
+         		<input class="form-control" type="password" required ng-model="user.password">
+       		</label>
+       		<br>
+       		<label class="item item-input">
+            	<span class="input-label">Repetir Contraseña:</span>
+				<input class="form-control" type="password" required ng-model="user.password2">
+         	</label>
+         	<br>
+			<button class="round-button" type="button" ng-show="docencia.$valid" ng-click="addUsuario()">Añadir Usuario</button>
+</div>
+</form>

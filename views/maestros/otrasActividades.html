@@ -1,0 +1,60 @@
+<div class="container-fluid">
+    <h1>OTRAS ACTIVIDADES ACADEMICAS</h1>
+    <form role="form" name="asignatura">
+        <div class="form-group">
+            <label class="item item-input">
+                <span class="input-label">Actividad</span>
+                <select class="form-control" ng-model="asignatura.nombre" required>
+                    <option>Atención estudiantes</option>
+                    <option>Preparación de clases, prácticas</option>
+                    <option>Calificaciones de exámenes</option>
+                    <option>Comité de currículo</option>
+                    <option>Comité de área</option>
+                    <option>Comisiones y/o encargos diferentes a estudios</option>
+                    <option>Diseño, preparación de cursos nuevos</option>
+                </select>
+            </label>
+
+            <br>
+            <label class="item item-input">
+                <span class="input-label">Subir actividad:</span>
+                <button class="glyphicon glyphicon-education"></button>
+            </label>
+            <br>
+            <br />
+            <label class="item item-input">
+                <span class="input-label">Tiempo de dedicación</span>
+                <input class="form-control" ng-model="asignatura.tipo" required/>
+            </label>
+            <br />
+            <label class="item item-input">
+                <span class="input-label">Descripción</span>
+                <textarea class="form-control" ng-model="asignatura.nombreEspecifico" required rows="5" id="comment"></textarea>
+            </label>
+            <br />
+            <button class="round-button" type="button" ng-show="asignatura.$valid"  ng-click="crear()">Crear</button>
+        </div>
+    </form>
+    <table class="table table-striped">
+        <thead>
+        <th>Actividad</th>
+        <th>Tiempo de dedicacion</th>
+        <th>Descripción</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="data in asignaturas">
+            <td style="border-bottom-left-radius: 10px">
+                {{data.nombre}}
+            </td>
+            <td>
+                {{data.tipo}}
+            </td>
+            <td>
+                {{data.actividad}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
+</div>
+</div>

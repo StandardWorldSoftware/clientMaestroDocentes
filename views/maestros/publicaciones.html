@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <h1>PUBLICACIONES</h1>
+    <form role="form" name="asignatura">
+        <div class="form-group">
+            <label class="item item-input">
+                <span class="input-label">Nombre del Artículo, Texto. Etc.</span>
+                <input class="form-control" ng-model="asignatura.nombre" required/>
+            </label>
+            <br />
+            <label class="item item-input">
+                <span class="input-label">Autor Principal</span>
+                <input class="form-control" ng-model="asignatura.tipo" required/>
+            </label>
+            <br />
+            <label class="item item-input">
+                <span class="input-label">Co-Autor</span>
+                <input class="form-control" ng-model="asignatura.nombreEspecifico" required/>
+            </label>
+            <br />
+            <label class="item item-input">
+                <span class="input-label">Tema Principal</span>
+                <input class="form-control" ng-model="asignatura.fechaInicio" required/>
+            </label>
+            <br>
+            <button class="round-button" type="button" ng-show="asignatura.$valid"  ng-click="crear()">Crear</button>
+        </div>
+    </form>
+    <table class="table table-striped">
+        <thead>
+        <th>Nombre del Artículo, Texto. Etc.</th>
+        <th>Autor Principal</th>
+        <th>Co-Autor</th>
+        <th>Tema Principal</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="data in asignaturas">
+            <td style="border-bottom-left-radius: 10px">
+                {{data.nombre}}
+            </td>
+            <td>
+                {{data.tipo}}
+            </td>
+            <td>
+                {{data.actividad}}
+            </td>
+            <td>
+                {{data.producto}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div ng-repeat="tipo in tipos">
+        <script type="text/ng-template" id="tipoUsuarioModal.html">
+            <div class="modal-header">
+                <h3 class="modal-title">Editar Tipo de Usuario</h3>
+            </div>
+            <div class="modal-body">
+                <label class="item item-input">
+                    <span class="input-label">Tipo: </span>
+                    <input type="text" ng-model="nuevoTipo.tipo">
+                </label>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="actualizar()">OK</button>
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            </div>
+        </script>
+
+
+    </div>
+</div>

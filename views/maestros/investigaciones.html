@@ -1,0 +1,95 @@
+<div class="container-fluid">
+    <h1>INVESTIGACIONES</h1>
+    <form role="form" name="asignatura">
+        <div class="form-group">
+            <label class="item item-input">
+                <span class="input-label">Nombre del semillero y/o Grupo:</span>
+                <input class="form-control" ng-model="asignatura.nombre" required/>
+            </label>
+            <br />
+            <label class="item item-input">
+                <span class="input-label">Tipo de Vinculo</span>
+                <div class="radio">
+                    <label><input type="radio" ng-model="asignatura.tipo" value="Director" name="optradio">Director</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" ng-model="asignatura.tipo" value="Miembro" name="optradio">Miembro</label>
+                </div>
+            </label>
+            <br />
+            <label class="item item-input">
+                <span class="input-label">Actividad Desarrollada:</span>
+                <input class="form-control" ng-model="asignatura.actividad" required/>
+            </label>
+            <br />
+            <label class="item item-input">
+                <span class="input-label">Productos para cada Actividad:</span>
+                <input class="form-control" ng-model="asignatura.producto" required/>
+            </label>
+            <br />
+            <label class="item item-input">
+                <span class="input-label">Dedicación Horas semana:</span>
+                <input class="form-control" ng-model="asignatura.horas" required/>
+            </label>
+            <br />
+            <label class="item item-input">
+                <span class="input-label">Vo. Bo. Coordinación Investigación:</span>
+                <input class="form-control" ng-model="asignatura.coordinacion" required/>
+            </label>
+            <br />
+            <button class="round-button" type="button" ng-show="asignatura.$valid"  ng-click="crear()">Crear</button>
+        </div>
+    </form>
+    <table class="table table-striped">
+        <thead>
+        <th>Nombre Asignatura</th>
+        <th>Tipo de Vinculo</th>
+        <th>Actividad Desarrollada</th>
+        <th>Productos para cada Actividad</th>
+        <th>Dedicación Horas semana</th>
+        <th>Vo. Bo. Coordinación Investigación</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="data in asignaturas">
+            <td style="border-bottom-left-radius: 10px">
+                {{data.nombre}}
+            </td>
+            <td>
+                {{data.tipo}}
+            </td>
+            <td>
+                {{data.actividad}}
+            </td>
+            <td>
+                {{data.producto}}
+            </td>
+            <td>
+                {{data.horas}}
+            </td>
+            <td style="border-bottom-right-radius: 10px">
+                {{data.coordinacion}}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div ng-repeat="tipo in tipos">
+        <script type="text/ng-template" id="tipoUsuarioModal.html">
+            <div class="modal-header">
+                <h3 class="modal-title">Editar Tipo de Usuario</h3>
+            </div>
+            <div class="modal-body">
+                <label class="item item-input">
+                    <span class="input-label">Tipo: </span>
+                    <input type="text" ng-model="nuevoTipo.tipo">
+                </label>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="actualizar()">OK</button>
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            </div>
+        </script>
+
+
+    </div>
+</div>
